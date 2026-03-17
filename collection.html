@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery | Hasantha Arts</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- FontAwesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#C8A97E',
+                        secondary: '#A68B60',
+                        accent: '#222222',
+                        light: '#0a0a0a',
+                        dark: '#121212'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light text-gray-200 font-sans antialiased overflow-x-hidden pt-20">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-black tracking-tighter uppercase text-white">
+                        Hasantha<span class="text-primary">.</span>Arts
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors">Home</a>
+                    <a href="collection.html" class="nav-link active text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors">Gallery</a>
+                    <a href="contact.html" class="nav-link text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-primary focus:outline-none focus:text-primary transition-colors">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark border-t border-white/5 shadow-xl absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="index.html" class="block px-3 py-3 text-base font-bold uppercase text-primary hover:text-secondary transition-colors">Home</a>
+                <a href="collection.html" class="block px-3 py-3 text-base font-bold uppercase text-secondary">Art Gallery</a>
+                <a href="contact.html" class="block px-3 py-3 text-base font-bold uppercase text-primary hover:text-secondary transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="bg-[#050505] text-white py-16 md:py-24 text-center border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 fade-in">
+            <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">Fine Art <span class="text-primary">Gallery</span></h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-lg">Explore our curated selection of 50+ masterpieces, from soulful abstracts to visionary digital concepts.</p>
+        </div>
+    </header>
+
+    <!-- Filters Section -->
+    <section class="py-6 border-b border-white/5 sticky top-20 bg-light/90 z-40 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="filter-btn active bg-primary text-black px-6 py-2 rounded-full font-black uppercase text-[10px] tracking-widest transition-all hover:bg-white shadow-md" data-filter="all">All Pieces</button>
+                <button class="filter-btn bg-dark text-gray-400 border border-white/10 px-6 py-2 rounded-full font-black uppercase text-[10px] tracking-widest transition-all hover:border-primary shadow-sm" data-filter="abstract">Abstracts</button>
+                <button class="filter-btn bg-dark text-gray-400 border border-white/10 px-6 py-2 rounded-full font-black uppercase text-[10px] tracking-widest transition-all hover:border-primary shadow-sm" data-filter="digital">Digital Art</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-16 min-h-screen bg-light">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div id="loading-spinner" class="flex justify-center items-center py-20">
+                <div class="loader"></div>
+            </div>
+
+            <div id="collection-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 opacity-0 transition-opacity duration-1000">
+                <!-- Products dynamically injected via JavaScript -->
+            </div>
+            
+            <div class="mt-16 text-center">
+                <button id="load-more-btn" class="bg-primary hover:bg-white hover:text-black text-black px-8 py-4 rounded-full font-black uppercase text-xs tracking-widest transition-transform hover:-translate-y-1 shadow-lg hidden">
+                    Discover More Pieces
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#050505] text-white py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-black uppercase tracking-tighter mb-4">Hasantha<span class="text-primary">.</span>Arts</h3>
+                    <p class="text-gray-400 font-light mb-4">
+                        Exclusive Art collections and digital masterpieces curated by Hasantha Ravilal Thilakarathna.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold uppercase mb-4 text-primary">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="collection.html" class="text-gray-400 hover:text-white transition-colors">Gallery (50+)</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Order Art</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold uppercase mb-4 text-primary">Connect</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt w-6 text-primary"></i> Monaragala, Sri Lanka
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope w-6 text-primary"></i> <a href="mailto:hasantharavilal@gmail.com" class="hover:text-white transition-colors">hasantharavilal@gmail.com</a>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone w-6 text-primary"></i> <a href="tel:+94760777973" class="hover:text-white transition-colors">+94 760 777 973</a>
+                        </li>
+                        <li class="flex items-center mt-4">
+                            <a href="https://facebook.com/hasantha.tharushika" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#1877F2] transition-colors shadow-lg">
+                                <i class="fab fa-facebook-f text-white"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-500 font-light">
+                &copy; <span id="current-year-col"></span> Hasantha Ravilal Thilakarathna. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

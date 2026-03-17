@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine Arts | Fine Art Gallery</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- FontAwesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#C8A97E',
+                        secondary: '#A68B60',
+                        accent: '#222222',
+                        light: '#0a0a0a',
+                        dark: '#121212'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light text-gray-200 font-sans antialiased overflow-x-hidden pt-20">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-black tracking-tighter uppercase text-white">
+                        Hasantha<span class="text-primary">.</span>Arts
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link active text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors">Home</a>
+                    <a href="collection.html" class="nav-link text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors">Collection</a>
+                    <a href="contact.html" class="nav-link text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-primary focus:outline-none focus:text-primary transition-colors">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark border-t border-white/5 shadow-xl absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="index.html" class="block px-3 py-3 text-base font-bold uppercase text-secondary">Home</a>
+                <a href="collection.html" class="block px-3 py-3 text-base font-bold uppercase text-primary hover:text-secondary transition-colors">Art Gallery</a>
+                <a href="contact.html" class="block px-3 py-3 text-base font-bold uppercase text-primary hover:text-secondary transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center bg-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 py-12 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+            
+            <div class="fade-in order-2 md:order-1 text-center md:text-left">
+                <span class="text-primary font-bold tracking-widest uppercase text-sm md:text-base mb-4 block">Fine Art Collection</span>
+                <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6 uppercase tracking-tighter text-white">
+                    The Freedom <br />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-primary">of Art</span>
+                </h1>
+                <p class="text-gray-400 text-lg md:text-xl mb-8 max-w-lg mx-auto md:mx-0 font-light">
+                    Download high-resolution abstract masterpieces and digital concepts for free. Curated by Hasantha Ravilal.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="collection.html" class="bg-primary hover:bg-white hover:text-black text-white px-8 py-4 rounded-full font-bold uppercase text-sm tracking-widest transition-transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+                        View Gallery
+                    </a>
+                    <a href="contact.html" class="bg-transparent border text-white border-white/20 hover:border-primary px-8 py-4 rounded-full font-bold uppercase text-sm tracking-widest transition-all hover:-translate-y-1">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+
+            <div class="fade-in order-1 md:order-2 relative">
+                <!-- Decorative element -->
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-secondary rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-pulse"></div>
+                <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-primary rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-pulse" style="animation-delay: 1s;"></div>
+                
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1549490349-864337ce3a13?auto=format&fit=crop&q=80&w=1000" alt="Hasantha Art Masterpiece" class="w-full h-auto object-cover" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Masterpieces -->
+    <section class="py-24 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <span class="text-primary font-bold uppercase tracking-[0.4em] text-xs mb-2 block">Featured Collection</span>
+                <h2 class="text-4xl font-black uppercase tracking-tighter mb-4 text-white">Masterpiece Categories</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-4"></div>
+                <p class="text-gray-500 max-w-xl mx-auto uppercase text-[10px] tracking-[0.2em]">All images available in high-resolution for free download</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Abstract Art -->
+                <a href="collection.html?category=abstract" class="group relative h-[600px] rounded-2xl overflow-hidden shadow-2xl fade-in block">
+                    <img src="https://images.unsplash.com/photo-1541701494-b1198bb29c63?auto=format&fit=crop&q=80&w=1200" alt="Abstract Art Gallery" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-12 w-full transform transition-all duration-500 group-hover:bg-primary/10">
+                        <span class="text-primary font-bold tracking-[0.4em] text-[10px] mb-2 block">CATEGORY 01</span>
+                        <h3 class="text-4xl font-black text-white uppercase mb-4 tracking-tighter">Soulful Abstracts</h3>
+                        <p class="text-gray-300 flex items-center group-hover:text-white transition-colors uppercase text-[10px] tracking-widest font-black">
+                            Explore Works <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Digital Concepts -->
+                <a href="collection.html?category=digital" class="group relative h-[600px] rounded-2xl overflow-hidden shadow-2xl fade-in block">
+                    <img src="https://images.unsplash.com/photo-1618005182314-a83a8119c0e8?auto=format&fit=crop&q=80&w=1200" alt="Digital Concept Art" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-12 w-full transform transition-all duration-500 group-hover:bg-primary/10">
+                        <span class="text-primary font-bold tracking-[0.4em] text-[10px] mb-2 block">CATEGORY 02</span>
+                        <h3 class="text-4xl font-black text-white uppercase mb-4 tracking-tighter">Digital Concepts</h3>
+                        <p class="text-gray-300 flex items-center group-hover:text-white transition-colors uppercase text-[10px] tracking-widest font-black">
+                            Explore Works <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center fade-in">
+                <a href="collection.html" class="inline-block border border-white/10 hover:border-primary text-gray-400 hover:text-primary px-12 py-5 rounded-full font-black uppercase text-xs tracking-[0.4em] transition-all">
+                    View Full Library (50+ Pieces)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#050505] text-white py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-black uppercase tracking-tighter mb-4">Hasantha<span class="text-primary">.</span>Arts</h3>
+                    <p class="text-gray-400 font-light mb-4">
+                        Exclusive Art collections and digital masterpieces curated by Hasantha Ravilal Thilakarathna.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold uppercase mb-4 text-primary">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="collection.html" class="text-gray-400 hover:text-white transition-colors">Art Gallery (50+)</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Order Art</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold uppercase mb-4 text-primary">Connect</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt w-6 text-primary"></i> Monaragala, Sri Lanka
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope w-6 text-primary"></i> <a href="mailto:hasantharavilal@gmail.com" class="hover:text-white transition-colors">hasantharavilal@gmail.com</a>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone w-6 text-primary"></i> <a href="tel:+94760777973" class="hover:text-white transition-colors">+94 760 777 973</a>
+                        </li>
+                        <li class="flex items-center mt-4">
+                            <a href="https://facebook.com/hasantha.tharushika" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#1877F2] transition-colors shadow-lg">
+                                <i class="fab fa-facebook-f text-white"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-500 font-light">
+                &copy; <span id="current-year"></span> Hasantha Ravilal Thilakarathna. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

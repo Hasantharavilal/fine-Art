@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasantha Arts | Fine Art Gallery</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- FontAwesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#C8A97E',
+                        secondary: '#A68B60',
+                        accent: '#222222',
+                        light: '#0a0a0a',
+                        dark: '#121212'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light text-gray-200 font-sans antialiased overflow-x-hidden pt-20">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-black tracking-tighter uppercase text-white">
+                        Hasantha<span class="text-primary">.</span>Arts
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors">Home</a>
+                    <a href="collection.html" class="nav-link text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors">Gallery</a>
+                    <a href="contact.html" class="nav-link active text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-primary focus:outline-none focus:text-primary transition-colors">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark border-t border-white/5 shadow-xl absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="index.html" class="block px-3 py-3 text-base font-bold uppercase text-primary hover:text-secondary transition-colors">Home</a>
+                <a href="collection.html" class="block px-3 py-3 text-base font-bold uppercase text-primary hover:text-secondary transition-colors">Art Gallery</a>
+                <a href="contact.html" class="block px-3 py-3 text-base font-bold uppercase text-secondary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Map Cover Area -->
+    <div class="relative w-full h-[40vh] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=2000');">
+        <div class="absolute inset-0 bg-primary/70 backdrop-blur-[2px]"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white fade-in">Get In <span class="text-primary">Touch</span></h1>
+        </div>
+    </div>
+
+    <!-- Contact Info Section -->
+    <section class="py-24 bg-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16">
+                
+                <!-- Info Cards -->
+                <div class="space-y-8 fade-in">
+                    <div class="mb-12">
+                        <span class="text-primary font-bold tracking-widest uppercase text-sm block mb-2">Connect with the Artist</span>
+                        <h2 class="text-4xl font-black uppercase tracking-tighter text-white">Acquire Masterpieces</h2>
+                        <div class="w-16 h-1 bg-primary mt-4"></div>
+                        <p class="text-gray-500 mt-6 text-lg">
+                            Interested in a particular piece or a custom commission? Reach out directly to discuss acquisitions and collaborations.
+                        </p>
+                    </div>
+
+                    <div class="flex items-start bg-accent/30 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-dark rounded-full flex items-center justify-center shadow-lg text-primary text-xl mr-6 flex-shrink-0 border border-white/5">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold uppercase tracking-tight text-white">Location</h4>
+                            <p class="text-gray-400 mt-2">Monaragala, Sri Lanka</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start bg-accent/30 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-dark rounded-full flex items-center justify-center shadow-lg text-primary text-xl mr-6 flex-shrink-0 border border-white/5">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold uppercase tracking-tight text-white">Email Address</h4>
+                            <a href="mailto:hasantharavilal@gmail.com" class="text-gray-400 hover:text-primary mt-2 inline-block transition-colors">hasantharavilal@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start bg-accent/30 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-dark rounded-full flex items-center justify-center shadow-lg text-primary text-xl mr-6 flex-shrink-0 border border-white/5">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold uppercase tracking-tight text-white">Phone Number</h4>
+                            <a href="tel:+94760777973" class="text-gray-400 hover:text-primary mt-2 inline-block transition-colors">+94 760 777 973</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start bg-accent/30 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-[#1877F2] rounded-full flex items-center justify-center shadow-lg text-white text-xl mr-6 flex-shrink-0 border border-white/5">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold uppercase tracking-tight text-white">Facebook</h4>
+                            <a href="https://facebook.com/hasantha.tharushika" target="_blank" class="text-[#1877F2] hover:text-primary mt-2 flex items-center gap-2 font-medium transition-colors">
+                                Hasantha.Tharushika <i class="fas fa-external-link-alt text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Mock -->
+                <div class="bg-[#111111] text-white p-10 md:p-14 rounded-3xl shadow-2xl relative overflow-hidden fade-in border border-white/5">
+                    <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+                    <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-white rounded-full mix-blend-screen filter blur-3xl opacity-5"></div>
+                    
+                    <h3 class="text-3xl font-black uppercase tracking-tighter mb-2 relative z-10">Art Inquiry</h3>
+                    <p class="text-gray-400 mb-8 relative z-10">Fill out the form below to inquire about pricing or custom art works.</p>
+
+                    <form class="space-y-6 relative z-10" onsubmit="event.preventDefault(); alert('Message feature requires backend integration. Please contact via WhatsApp or Email directy.');">
+                        <div>
+                            <label class="block text-sm font-bold tracking-widest uppercase text-gray-400 mb-2">Your Name</label>
+                            <input type="text" class="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-secondary transition-colors" placeholder="e.g. John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold tracking-widest uppercase text-gray-400 mb-2">Email Address</label>
+                            <input type="email" class="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-secondary transition-colors" placeholder="e.g. john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold tracking-widest uppercase text-gray-400 mb-2">Message</label>
+                            <textarea rows="4" class="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-secondary transition-colors" placeholder="How can we help?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-white hover:text-black text-black px-8 py-4 rounded-lg font-black uppercase text-xs tracking-widest transition-all shadow-lg hover:shadow-xl">
+                            Send Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#050505] text-white py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-black uppercase tracking-tighter mb-4">Hasantha<span class="text-primary">.</span>Arts</h3>
+                    <p class="text-gray-400 font-light mb-4">
+                        Exclusive Art collections and digital masterpieces curated by Hasantha Ravilal Thilakarathna.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold uppercase mb-4 text-primary">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="collection.html" class="text-gray-400 hover:text-white transition-colors">Gallery (50+)</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Order Art</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold uppercase mb-4 text-primary">Connect</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt w-6 text-primary"></i> Monaragala, Sri Lanka
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope w-6 text-primary"></i> <a href="mailto:hasantharavilal@gmail.com" class="hover:text-white transition-colors">hasantharavilal@gmail.com</a>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone w-6 text-primary"></i> <a href="tel:+94760777973" class="hover:text-white transition-colors">+94 760 777 973</a>
+                        </li>
+                        <li class="flex items-center mt-4">
+                            <a href="https://facebook.com/hasantha.tharushika" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#1877F2] transition-colors shadow-lg">
+                                <i class="fab fa-facebook-f text-white"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-500 font-light">
+                &copy; <span id="current-year-cnt"></span> Hasantha Ravilal Thilakarathna. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
